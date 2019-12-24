@@ -6,6 +6,7 @@ use Doctrine\ORM\Query;
 use Doctrine\ORM\QueryBuilder;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\DoctrineORMAdminBundle\Datagrid\ProxyQuery;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class ORMTranslationAdmin extends TranslationAdmin
 {
@@ -48,7 +49,7 @@ class ORMTranslationAdmin extends TranslationAdmin
                         'multiple' => true,
                         'expanded' => false
                     ),
-                    'field_type'    => 'choice',
+                    'field_type'    => ChoiceType::class,
                 )
             )
             ->add(
@@ -95,7 +96,7 @@ class ORMTranslationAdmin extends TranslationAdmin
                         'placeholder' => 'all',
                         'empty_data'  => 'all'
                     ),
-                    'field_type'    => 'choice',
+                    'field_type'    => ChoiceType::class,
                 )
             )
             ->add(
