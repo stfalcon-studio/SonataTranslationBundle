@@ -210,7 +210,7 @@ abstract class TranslationAdmin extends Admin
     {
         $subject = $this->getSubject();
 
-        if (null === $subject->getId()) {
+        if (null !== $subject && null === $subject->getId()) {
             $subject->setDomain($this->getDefaultDomain());
         }
 
